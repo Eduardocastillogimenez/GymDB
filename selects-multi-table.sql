@@ -1,11 +1,12 @@
 -- Obtener todos los servicios con sus planes:
-SELECT p.name AS plan_name, 
-    p.price AS plan_price, 
-    s.name AS service_name,
-    s.description AS service_description
+SELECT s.name AS service_name,
+       s.description AS service_description,
+       GROUP_CONCAT(p.name) AS plan_names,
+       GROUP_CONCAT(p.price) AS plan_prices
 FROM services s
-INNER JOIN service_plans sp ON sp.service_id  = s.id
-INNER JOIN plans p ON p.id = sp.plan_id;
+INNER JOIN service_plans sp ON sp.service_id = s.id
+INNER JOIN plans p ON p.id = sp.plan_id
+GROUP BY s.name, s.description;
 
 -- Obtener el nombre, descripción de las clases que imparte un coach en particular:
 SELECT c.name, 

@@ -59,7 +59,7 @@ INSERT INTO service_plans (plan_id, service_id) VALUES (2, 1), (3, 1), (3, 2);
 INSERT INTO subscription_history (subscription_date, subscription_expiration, subscription_price, plans_id, customer_id) VALUES 
   ('2022-01-01', '2022-02-01', 50, 1, 1),
   ('2022-03-15', '2022-06-15', 225, 2, 2),
-  ('2022-07-01', '2022-12-31', 550, 3, 3);
+  ('2022-07-01', '2023-04-10', 550, 3, 3);
 
 
 
